@@ -45,7 +45,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking, onOpenConfig }) =
           <div className="flex items-center gap-4 text-[#C5BBAF]">
             <span className="flex items-center gap-1.5 text-[#F5F0E8]">
               <MapPin className="w-3.5 h-3.5 text-[#7A9988] shrink-0" />
-              <span>{BUSINESS_CONFIG.city}, {BUSINESS_CONFIG.state}</span>
+              <span title={BUSINESS_CONFIG.streetAddressPlaceholder}>Zone-I, MP Nagar, {BUSINESS_CONFIG.city}</span>
             </span>
             <span className="hidden sm:inline text-[#8C8275]">·</span>
             <span className="hidden sm:inline text-[#ECE4D8]/90">Open 24 Hours (24/7 Service)</span>
@@ -205,8 +205,8 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking, onOpenConfig }) =
                 <span>Book Appointment</span>
               </button>
 
-              <div className="text-xs text-[#685F53] flex flex-col gap-1 pt-2">
-                <span>📍 {BUSINESS_CONFIG.city}, {BUSINESS_CONFIG.state}</span>
+              <div className="text-xs text-[#685F53] flex flex-col gap-1.5 pt-2">
+                <span className="leading-relaxed">📍 {BUSINESS_CONFIG.streetAddressPlaceholder}</span>
                 <a href={`mailto:${BUSINESS_CONFIG.email}`} className="hover:text-[#446353] transition-colors">
                   ✉️ {BUSINESS_CONFIG.email}
                 </a>

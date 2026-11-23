@@ -93,13 +93,17 @@ export interface BusinessConfig {
  */
 export const businessLocation = {
   name: "Nandini Spa",
+  address: "22, Ram Gopal Maheshwari Marg, Near City Bank, Indira Press Complex, Zone-I, Maharana Pratap Nagar, Bhopal, Madhya Pradesh 462011, India",
   city: "Bhopal",
   state: "Madhya Pradesh",
   country: "India",
+  postalCode: "462011",
   latitude: 23.231228599999998,
   longitude: 77.43317379999999,
+  placeUrl:
+    "https://www.google.com/maps/search/?api=1&query=22%2C%20Ram%20Gopal%20Maheshwari%20Marg%2C%20Near%20City%20Bank%2C%20Indira%20Press%20Complex%2C%20Zone-I%2C%20Maharana%20Pratap%20Nagar%2C%20Bhopal%2C%20Madhya%20Pradesh%20462011%2C%20India",
   directionsUrl:
-    "https://www.google.com/maps/dir/?api=1&destination=23.231228599999998%2C77.43317379999999&travelmode=driving",
+    "https://www.google.com/maps/dir/?api=1&destination=22%2C+Ram+Gopal+Maheshwari+Marg%2C+Near+City+Bank%2C+Indira+Press+Complex%2C+Zone-I%2C+Maharana+Pratap+Nagar%2C+Bhopal%2C+Madhya+Pradesh+462011%2C+India",
 };
 
 export const BUSINESS_CONFIG: BusinessConfig = {
@@ -123,9 +127,9 @@ export const BUSINESS_CONFIG: BusinessConfig = {
   city: businessLocation.city,
   state: businessLocation.state,
   country: businessLocation.country,
-  locality: "Maharana Pratap Nagar (MP Nagar)",
+  locality: "Indira Press Complex, Zone-I, Maharana Pratap Nagar",
   zipCode: "462011",
-  streetAddressPlaceholder: "Nandini Spa, Maharana Pratap Nagar (MP Nagar), Bhopal, Madhya Pradesh",
+  streetAddressPlaceholder: "22, Ram Gopal Maheshwari Marg, Near City Bank, Indira Press Complex, Zone-I, Maharana Pratap Nagar, Bhopal, Madhya Pradesh 462011, India",
   isExactStreetAddressConfigured: true,
 
   // Contact Information
@@ -145,9 +149,9 @@ export const BUSINESS_CONFIG: BusinessConfig = {
   maps: {
     latitude: businessLocation.latitude,
     longitude: businessLocation.longitude,
-    zoomLevel: 15,
-    embedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3666.325797556229!2d77.43317379999999!3d23.231228599999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397c4306c83a65db%3A0x7d84842de233e7df!2sNandini%20Spa!5e0!3m2!1sen!2sin!4v1793620022148!5m2!1sen!2sin",
-    placeUrl: businessLocation.directionsUrl,
+    zoomLevel: 16,
+    embedUrl: "https://maps.google.com/maps?q=22%2C%20Ram%20Gopal%20Maheshwari%20Marg%2C%20Near%20City%20Bank%2C%20Indira%20Press%20Complex%2C%20Zone-I%2C%20Maharana%20Pratap%20Nagar%2C%20Bhopal%2C%20Madhya%20Pradesh%20462011%2C%20India&t=&z=16&ie=UTF8&iwloc=B&output=embed",
+    placeUrl: businessLocation.placeUrl,
     directionsUrl: businessLocation.directionsUrl,
     apiKey: typeof import.meta !== "undefined" ? import.meta.env?.VITE_GOOGLE_MAPS_API_KEY : undefined,
   },
@@ -171,7 +175,7 @@ export const BUSINESS_CONFIG: BusinessConfig = {
  */
 export function getGoogleMapsEmbedUrl(query?: string, zoom = 16): string {
   // If no custom query is provided or query matches Nandini Spa, return the verified exact embed URL
-  if (!query || query.includes("Nandini")) {
+  if (!query || query.includes("Nandini") || query.includes("Indira Press") || query.includes("Ram Gopal") || query.includes("Maharana Pratap Nagar")) {
     return BUSINESS_CONFIG.maps.embedUrl;
   }
 
@@ -191,7 +195,7 @@ export function getGoogleMapsEmbedUrl(query?: string, zoom = 16): string {
  * Helper utility to build navigation directions URL pointing to destination
  */
 export function getGoogleMapsDirectionsUrl(destinationQuery?: string): string {
-  if (!destinationQuery || destinationQuery.includes("Nandini") || destinationQuery.includes("Bhopal")) {
+  if (!destinationQuery || destinationQuery.includes("Nandini") || destinationQuery.includes("Indira Press") || destinationQuery.includes("Ram Gopal") || destinationQuery.includes("Bhopal")) {
     return businessLocation.directionsUrl;
   }
   const encoded = encodeURIComponent(destinationQuery);

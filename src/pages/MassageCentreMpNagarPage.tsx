@@ -22,7 +22,7 @@ export const MassageCentreMpNagarPage: React.FC<MassageCentreMpNagarPageProps> =
   const faqs = [
     {
       q: 'Where is Nandini Spa located in MP Nagar, Bhopal?',
-      a: 'Nandini Spa is situated in Maharana Pratap Nagar (MP Nagar), Bhopal, Madhya Pradesh (Coordinates: 23.2312, 77.4331). We are centrally located close to Habibganj (Rani Kamlapati Railway Station), DB City Mall, Chetak Bridge, and MP Nagar Zone 1 & Zone 2.',
+      a: 'Nandini Spa is situated at 22, Ram Gopal Maheshwari Marg, Near City Bank, Indira Press Complex, Zone-I, Maharana Pratap Nagar, Bhopal, Madhya Pradesh 462011 (Coordinates: 23.2312, 77.4331). We are centrally located close to Habibganj (Rani Kamlapati Railway Station), DB City Mall, Chetak Bridge, and MP Nagar Zone-I.',
     },
     {
       q: 'What are the operating hours of Nandini Spa in MP Nagar?',
@@ -58,7 +58,7 @@ export const MassageCentreMpNagarPage: React.FC<MassageCentreMpNagarPageProps> =
     },
     {
       title: 'Centrally Positioned in MP Nagar',
-      desc: 'Walking distance to MP Nagar Zone 1 and Zone 2 commercial complexes, DB City Mall, and major corporate offices.',
+      desc: 'Situated at 22, Ram Gopal Maheshwari Marg, Near City Bank, Indira Press Complex, Zone-I, walking distance to MP Nagar commercial complexes, DB City Mall, and corporate offices.',
     },
     {
       title: '24/7 Round-the-Clock Service',
@@ -214,8 +214,8 @@ export const MassageCentreMpNagarPage: React.FC<MassageCentreMpNagarPageProps> =
                 <span>Nandini Spa</span>
               </div>
               <div>
-                <span className="font-semibold text-[#28231D] block">Target Locality:</span>
-                <span>Maharana Pratap Nagar (MP Nagar), Bhopal, Madhya Pradesh</span>
+                <span className="font-semibold text-[#28231D] block">Sanctuary Address:</span>
+                <span>{BUSINESS_CONFIG.streetAddressPlaceholder}</span>
               </div>
               <div>
                 <span className="font-semibold text-[#28231D] block">Nearest Railway Station:</span>

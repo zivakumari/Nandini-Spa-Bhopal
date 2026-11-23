@@ -156,9 +156,10 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking, onOpenConfig }) =
                     href={BUSINESS_CONFIG.maps.directionsUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 text-[11px] text-[#7A9988] hover:text-[#FAF7F2] underline mt-1.5"
+                    className="inline-flex items-center gap-1 text-[11px] text-[#7A9988] hover:text-[#FAF7F2] underline mt-1.5 font-medium"
+                    title="Get Directions to Nandini Spa on Google Maps"
                   >
-                    <span>Open in Google Maps</span>
+                    <span>Get Directions in Google Maps</span>
                     <ArrowUpRight className="w-3 h-3" />
                   </a>
                 </div>

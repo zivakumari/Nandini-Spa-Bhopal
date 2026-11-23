@@ -65,21 +65,31 @@ if (fs.existsSync(vercelConfigPath)) {
   assert(vContent.includes('https://www.nandinispa.online/$1'), 'vercel.json redirects non-www to canonical www domain');
 }
 
-// 2b. Validate Google Maps Integration & Exact Embed URL
-const EXACT_MAPS_EMBED_URL = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3666.325797556229!2d77.43317379999999!3d23.231228599999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397c4306c83a65db%3A0x7d84842de233e7df!2sNandini%20Spa!5e0!3m2!1sen!2sin!4v1793620022148!5m2!1sen!2sin";
-const EXACT_DIRECTIONS_URL = "https://www.google.com/maps/dir/?api=1&destination=23.231228599999998%2C77.43317379999999&travelmode=driving";
+// 2b. Validate Google Maps Integration & Official Address
+const NEW_MAPS_EMBED_URL = "https://maps.google.com/maps?q=22%2C%20Ram%20Gopal%20Maheshwari%20Marg%2C%20Near%20City%20Bank%2C%20Indira%20Press%20Complex%2C%20Zone-I%2C%20Maharana%20Pratap%20Nagar%2C%20Bhopal%2C%20Madhya%20Pradesh%20462011%2C%20India&t=&z=16&ie=UTF8&iwloc=B&output=embed";
+const NEW_DIRECTIONS_URL = "https://www.google.com/maps/dir/?api=1&destination=22%2C+Ram+Gopal+Maheshwari+Marg%2C+Near+City+Bank%2C+Indira+Press+Complex%2C+Zone-I%2C+Maharana+Pratap+Nagar%2C+Bhopal%2C+Madhya+Pradesh+462011%2C+India";
+const NEW_SEARCH_URL = "https://www.google.com/maps/search/?api=1&query=22%2C%20Ram%20Gopal%20Maheshwari%20Marg%2C%20Near%20City%20Bank%2C%20Indira%20Press%20Complex%2C%20Zone-I%2C%20Maharana%20Pratap%20Nagar%2C%20Bhopal%2C%20Madhya%20Pradesh%20462011%2C%20India";
+const OFFICIAL_ADDRESS = "22, Ram Gopal Maheshwari Marg, Near City Bank, Indira Press Complex, Zone-I, Maharana Pratap Nagar, Bhopal, Madhya Pradesh 462011, India";
+
 const businessConfigPath = path.join(rootDir, 'src', 'config', 'business.ts');
 assert(fs.existsSync(businessConfigPath), 'src/config/business.ts exists');
 if (fs.existsSync(businessConfigPath)) {
   const bContent = fs.readFileSync(businessConfigPath, 'utf8');
-  assert(bContent.includes(EXACT_MAPS_EMBED_URL), 'business.ts contains exact Google Maps embed URL for Nandini Spa');
+  assert(bContent.includes(NEW_MAPS_EMBED_URL), 'business.ts contains new exact Google Maps embed URL for Nandini Spa');
+  assert(bContent.includes(OFFICIAL_ADDRESS), 'business.ts contains full official new business address');
+  assert(bContent.includes('Ram Gopal Maheshwari Marg'), 'business.ts contains Ram Gopal Maheshwari Marg');
+  assert(bContent.includes('Indira Press Complex'), 'business.ts contains Indira Press Complex');
+  assert(bContent.includes('Zone-I'), 'business.ts contains Zone-I');
+  assert(bContent.includes('462011'), 'business.ts contains postal code 462011');
   assert(bContent.includes('23.231228599999998'), 'business.ts contains verified latitude 23.231228599999998');
   assert(bContent.includes('77.43317379999999'), 'business.ts contains verified longitude 77.43317379999999');
-  assert(bContent.includes(EXACT_DIRECTIONS_URL), 'business.ts directions URL references exact coordinates to avoid Kolkata redirection');
+  assert(bContent.includes(NEW_DIRECTIONS_URL), 'business.ts directions URL references new official address');
+  assert(bContent.includes(NEW_SEARCH_URL), 'business.ts placeUrl references new Google Maps search URL');
   assert(bContent.includes('24 Hours') || bContent.includes('24/7'), 'business.ts specifies 24-hour service');
   assert(bContent.includes('anilbhai00555@gmail.com'), 'business.ts contains new official email anilbhai00555@gmail.com');
   assert(!new RegExp(['karan','bhai'].join(''), 'i').test(bContent), 'business.ts contains zero old email references');
   assert(!bContent.includes('github.io'), 'business.ts contains zero github.io references');
+  assert(!bContent.includes('Anna Nagar'), 'business.ts contains zero old Anna Nagar references');
 }
 
 // 2c. Validate 24-Hour Service Schema in index.html
@@ -91,8 +101,12 @@ if (fs.existsSync(indexHtmlPath)) {
   assert(iContent.includes('24 hours') || iContent.includes('24/7'), 'index.html noscript specifies 24-hour service availability');
   assert(iContent.includes('anilbhai00555@gmail.com'), 'index.html contains new official email anilbhai00555@gmail.com');
   assert(!new RegExp(['karan','bhai'].join(''), 'i').test(iContent), 'index.html contains zero old email references');
+  assert(iContent.includes('22, Ram Gopal Maheshwari Marg'), 'index.html contains new official address in structured data');
+  assert(iContent.includes('Indira Press Complex'), 'index.html contains Indira Press Complex');
+  assert(iContent.includes('462011'), 'index.html contains postal code 462011');
   assert(iContent.includes(CANONICAL_DOMAIN), 'index.html has canonical domain');
   assert(!iContent.includes('github.io'), 'index.html contains zero github.io references');
+  assert(!iContent.includes('Anna Nagar'), 'index.html contains zero old Anna Nagar references');
 }
 
 const mapsEmbedComponentPath = path.join(rootDir, 'src', 'components', 'GoogleMapsEmbed.tsx');
@@ -149,6 +163,11 @@ for (const r of routesToCheck) {
     assert(!oldEmailPattern.test(html), `${r.file} contains zero old email references`);
     if (r.file !== '404.html') {
       assert(html.includes('anilbhai00555@gmail.com'), `${r.file} contains official business email anilbhai00555@gmail.com`);
+      assert(html.includes('22, Ram Gopal Maheshwari Marg'), `${r.file} contains Ram Gopal Maheshwari Marg in new official address`);
+      assert(html.includes('Indira Press Complex'), `${r.file} contains Indira Press Complex in new official address`);
+      assert(html.includes('Zone-I'), `${r.file} contains Zone-I in new official address`);
+      assert(html.includes('462011'), `${r.file} contains postal code 462011`);
+      assert(!html.includes('Anna Nagar'), `${r.file} contains zero old Anna Nagar references`);
     }
 
     // Verify JSON-LD parses cleanly

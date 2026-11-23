@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ShieldCheck, Droplets, HeartHandshake, Compass, Award, Calendar, Phone } from 'lucide-react';
+import { ShieldCheck, Droplets, HeartHandshake, Compass, Award, Calendar, Phone, MapPin, Navigation, ExternalLink } from 'lucide-react';
 import { BUSINESS_CONFIG } from '../config/business';
 import { SEOHead } from '../components/SEOHead';
 import { ROUTE_SEO, generateBreadcrumbsSchema, getProductionBaseUrl } from '../data/seoData';
@@ -197,6 +197,48 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenBooking }) => {
             </div>
           </div>
 
+        </div>
+      </section>
+
+      {/* Sanctuary Location & Visiting Information */}
+      <section className="py-16 bg-[#F3EFE6] border-t border-[#E3DACD] px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="bg-white rounded-xl p-8 border border-[#E3DACD] shadow-xs flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+            <div className="space-y-2 max-w-2xl">
+              <div className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-[#446353]">
+                <MapPin className="w-3.5 h-3.5" />
+                <span>Visit Our Sanctuary</span>
+              </div>
+              <h3 className="font-serif text-2xl text-[#28231D] font-normal">
+                {BUSINESS_CONFIG.brandName} Bhopal
+              </h3>
+              <p className="text-sm text-[#685F53] leading-relaxed">
+                {BUSINESS_CONFIG.streetAddressPlaceholder}
+              </p>
+              <p className="text-xs text-[#8C8275]">
+                Centrally located near Habibganj (Rani Kamlapati Railway Station), DB City Mall, and Zone 1 & 2 commercial complexes. Open 24 Hours daily.
+              </p>
+            </div>
+            <div className="flex flex-wrap items-center gap-3 shrink-0">
+              <a
+                href={BUSINESS_CONFIG.maps.directionsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#446353] hover:bg-[#365143] text-white text-xs font-semibold uppercase tracking-wider rounded-sm transition-colors shadow-xs"
+                title="Get directions to Nandini Spa on Google Maps"
+              >
+                <Navigation className="w-3.5 h-3.5" />
+                <span>Get Directions</span>
+                <ExternalLink className="w-3 h-3 ml-0.5" />
+              </a>
+              <Link
+                to="/contact"
+                className="inline-flex items-center gap-2 px-4 py-2.5 bg-white hover:bg-[#F3EFE6] text-[#28231D] text-xs font-medium rounded-sm border border-[#E3DACD] transition-colors"
+              >
+                <span>Contact Page</span>
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
 
