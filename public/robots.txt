@@ -1,0 +1,16 @@
+# Production robots.txt for Nandini Spa Bhopal
+# https://www.nandinispa.online/
+
+User-agent: *
+Allow: /
+
+# Explicit resource access for Googlebot smartphone & rendering engines
+Allow: /assets/
+
+# Disallow private archives & error pages
+Disallow: /*.zip$
+Disallow: /404
+Disallow: /404.html
+
+# XML Sitemap Pointer
+Sitemap: https://www.nandinispa.online/sitemap.xml
