@@ -129,7 +129,7 @@ export const BUSINESS_CONFIG: BusinessConfig = {
   isExactStreetAddressConfigured: true,
 
   // Contact Information
-  email: "Karanbhai25807@gmail.com",
+  email: "anilbhai00555@gmail.com",
   
   // Mobile / Phone configuration
   phone: "+91 90604 33848",

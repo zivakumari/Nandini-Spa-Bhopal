@@ -77,6 +77,8 @@ if (fs.existsSync(businessConfigPath)) {
   assert(bContent.includes('77.43317379999999'), 'business.ts contains verified longitude 77.43317379999999');
   assert(bContent.includes(EXACT_DIRECTIONS_URL), 'business.ts directions URL references exact coordinates to avoid Kolkata redirection');
   assert(bContent.includes('24 Hours') || bContent.includes('24/7'), 'business.ts specifies 24-hour service');
+  assert(bContent.includes('anilbhai00555@gmail.com'), 'business.ts contains new official email anilbhai00555@gmail.com');
+  assert(!new RegExp(['karan','bhai'].join(''), 'i').test(bContent), 'business.ts contains zero old email references');
   assert(!bContent.includes('github.io'), 'business.ts contains zero github.io references');
 }
 
@@ -87,6 +89,8 @@ if (fs.existsSync(indexHtmlPath)) {
   const iContent = fs.readFileSync(indexHtmlPath, 'utf8');
   assert(iContent.includes('"opens": "00:00"') && iContent.includes('"closes": "23:59"'), 'index.html Schema.org specifies 24-hour service (00:00 to 23:59)');
   assert(iContent.includes('24 hours') || iContent.includes('24/7'), 'index.html noscript specifies 24-hour service availability');
+  assert(iContent.includes('anilbhai00555@gmail.com'), 'index.html contains new official email anilbhai00555@gmail.com');
+  assert(!new RegExp(['karan','bhai'].join(''), 'i').test(iContent), 'index.html contains zero old email references');
   assert(iContent.includes(CANONICAL_DOMAIN), 'index.html has canonical domain');
   assert(!iContent.includes('github.io'), 'index.html contains zero github.io references');
 }
@@ -141,6 +145,11 @@ for (const r of routesToCheck) {
     assert(html.includes('application/ld+json'), `${r.file} has JSON-LD structured data`);
     assert(html.includes('<noscript>'), `${r.file} has static noscript fallback for non-JS crawlers`);
     assert(!html.includes('github.io'), `${r.file} contains zero github.io references`);
+    const oldEmailPattern = new RegExp(['karan','bhai'].join(''), 'i');
+    assert(!oldEmailPattern.test(html), `${r.file} contains zero old email references`);
+    if (r.file !== '404.html') {
+      assert(html.includes('anilbhai00555@gmail.com'), `${r.file} contains official business email anilbhai00555@gmail.com`);
+    }
 
     // Verify JSON-LD parses cleanly
     const jsonLdMatch = html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/i);

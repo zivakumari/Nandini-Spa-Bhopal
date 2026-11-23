@@ -23,7 +23,7 @@ const NAP_DETAILS = {
   country: 'IN',
   phone: '+91 90604 33848',
   phoneTel: '+919060433848',
-  email: 'Karanbhai25807@gmail.com',
+  email: 'anilbhai00555@gmail.com',
   hours: 'Open 24 Hours (Monday – Sunday) / 24/7 Round-the-Clock Service',
   latitude: 23.231228599999998,
   longitude: 77.43317379999999,

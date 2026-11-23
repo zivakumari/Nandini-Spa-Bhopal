@@ -236,7 +236,7 @@ export const BookingPage: React.FC = () => {
                     <input
                       id="booking-email"
                       type="email"
-                      placeholder="e.g. rahul@example.com"
+                      placeholder="e.g. user@example.com"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       aria-invalid={!!errors.email}

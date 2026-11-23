@@ -292,7 +292,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onOpenConfig, onOpenBo
                     <input
                       id="contact-email"
                       type="email"
-                      placeholder="e.g. sameer@example.com"
+                      placeholder="e.g. user@example.com"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       aria-invalid={!!errors.email}

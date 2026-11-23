@@ -288,7 +288,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                     <input
                       id="bm-email"
                       type="email"
-                      placeholder="e.g. radhika@example.com"
+                      placeholder="e.g. user@example.com"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       aria-invalid={!!errors.email}
