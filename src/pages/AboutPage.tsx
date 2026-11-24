@@ -216,7 +216,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenBooking }) => {
                 {BUSINESS_CONFIG.streetAddressPlaceholder}
               </p>
               <p className="text-xs text-[#8C8275]">
-                Centrally located near Habibganj (Rani Kamlapati Railway Station), DB City Mall, and Zone 1 & 2 commercial complexes. Open 24 Hours daily.
+                Centrally located near Habibganj (Rani Kamlapati Railway Station), DB City Mall, and Zone 1 & 2 commercial complexes. Open daily 9:00 AM – 10:00 PM.
               </p>
             </div>
             <div className="flex flex-wrap items-center gap-3 shrink-0">

@@ -27,7 +27,7 @@ export const getProductionBaseUrl = (): string => {
 export const ROUTE_SEO: Record<string, RouteSEOConfig> = {
   home: {
     title: 'Best Spa in Bhopal | Luxury Body Massage Centre in MP Nagar',
-    description: 'Experience the best spa in Bhopal at Nandini Spa, MP Nagar. Therapeutic full body massage, luxury couple spa & 24/7 private suites. Call +91 90604 33848!',
+    description: 'Experience the best spa in Bhopal at Nandini Spa, MP Nagar. Therapeutic full body massage, luxury couple spa & private suites. Call +91 90604 33848!',
     canonicalPath: '/',
     robots: 'index, follow',
     keywords: 'Best Spa in Bhopal, Spa in Bhopal, Massage Centre in Bhopal, Body Massage Centre in Bhopal, Full Body Massage in Bhopal, Luxury Spa in Bhopal, Spa in MP Nagar Bhopal, Spa Near Me, Spa near Indira Press Complex, Spa in Zone-I MP Nagar, Massage Spa in Bhopal',
@@ -47,7 +47,7 @@ export const ROUTE_SEO: Record<string, RouteSEOConfig> = {
   },
   services: {
     title: 'Spa Services & Massage Pricing Bhopal | Nandini Spa Menu',
-    description: 'Explore spa services and transparent massage prices in Bhopal at Nandini Spa. Full body massage, Swedish, Thai & couple packages from ₹1,799. Book 24/7!',
+    description: 'Explore spa services and transparent massage prices in Bhopal at Nandini Spa. Full body massage, Swedish, Thai & couple packages from ₹1,799. Book online!',
     canonicalPath: '/services',
     robots: 'index, follow',
     keywords: 'Spa Services in Bhopal, Massage Centre in Bhopal, Spa Prices Bhopal, Body Massage Price Bhopal, Deep Tissue Massage Bhopal, Best Spa Centre in Bhopal',
@@ -77,7 +77,7 @@ export const ROUTE_SEO: Record<string, RouteSEOConfig> = {
   },
   luxurySpa: {
     title: 'Luxury Spa in Bhopal | 5-Star Wellness Sanctuary in MP Nagar',
-    description: 'Experience Bhopal’s finest luxury spa at Nandini Spa, MP Nagar. Acoustically damped private suites, ensuite rainfall showers & organic botanicals. Open 24/7.',
+    description: 'Experience Bhopal’s finest luxury spa at Nandini Spa, MP Nagar. Acoustically damped private suites, ensuite rainfall showers & organic botanicals. Daily 9 AM – 10 PM.',
     canonicalPath: '/luxury-spa',
     robots: 'index, follow',
     keywords: 'Luxury Spa in Bhopal, Premium Spa in Bhopal, 5 Star Spa Experience Bhopal, Best Spa in Bhopal, VIP Spa Sanctuary MP Nagar, Executive Wellness Bhopal',
@@ -116,8 +116,8 @@ export const ROUTE_SEO: Record<string, RouteSEOConfig> = {
     h1: 'Classic Swedish Massage in Bhopal — Stress Recovery & Muscular Decompression',
   },
   massageCentreMpNagar: {
-    title: 'Massage Centre in MP Nagar Bhopal | Nandini Spa | Open 24/7',
-    description: 'Visit Nandini Spa, the premier massage centre in MP Nagar, Bhopal. Near Habibganj (Rani Kamlapati) Station & DB City Mall. 24/7 private luxury suites. Call now!',
+    title: 'Massage Centre in MP Nagar Bhopal | Nandini Spa Sanctuary',
+    description: 'Visit Nandini Spa, the premier massage centre in MP Nagar, Bhopal. Near Habibganj (Rani Kamlapati) Station & DB City Mall. Private luxury suites. Call now!',
     canonicalPath: '/massage-centre-mp-nagar',
     robots: 'index, follow',
     keywords: 'Massage Centre in MP Nagar, Spa in MP Nagar Bhopal, Best Spa Near MP Nagar, Spa Near Habibganj Railway Station, Massage Centre Near Maharana Pratap Nagar, Massage Near Me Bhopal, Spa near Indira Press Complex, Spa in Zone-I MP Nagar, Massage Spa in Bhopal',
@@ -127,7 +127,7 @@ export const ROUTE_SEO: Record<string, RouteSEOConfig> = {
   },
   contact: {
     title: 'Contact Nandini Spa Bhopal | Location, Directions & Phone',
-    description: 'Contact Nandini Spa in MP Nagar, Bhopal. Open 24 hours daily. Call +91 90604 33848, chat on WhatsApp, or get Google Maps directions near Rani Kamlapati Station!',
+    description: 'Contact Nandini Spa in MP Nagar, Bhopal. Open daily 9 AM – 10 PM. Call +91 90604 33848, chat on WhatsApp, or get Google Maps directions near Rani Kamlapati Station!',
     canonicalPath: '/contact',
     robots: 'index, follow',
     keywords: 'Contact Nandini Spa Bhopal, Spa in MP Nagar Bhopal, Nandini Spa Phone, Spa Directions Bhopal, Massage Centre Near Maharana Pratap Nagar, Spa Near Me, Spa near Indira Press Complex',
@@ -137,7 +137,7 @@ export const ROUTE_SEO: Record<string, RouteSEOConfig> = {
   },
   booking: {
     title: 'Book Spa Appointment in Bhopal | Nandini Spa Online Reservation',
-    description: 'Reserve your spa and massage appointment online at Nandini Spa Bhopal. Instant confirmation for full body massage, couples suites & Thai bodywork. Open 24/7.',
+    description: 'Reserve your spa and massage appointment online at Nandini Spa Bhopal. Instant confirmation for full body massage, couples suites & Thai bodywork. Daily 9 AM – 10 PM.',
     canonicalPath: '/booking',
     robots: 'index, follow',
     keywords: 'Spa Booking in Bhopal, Book Spa Appointment Bhopal, Nandini Spa Reservation, Online Spa Booking MP Nagar, Massage Appointment Bhopal',
@@ -230,7 +230,7 @@ export const generateLocalBusinessSchema = (baseUrl: string) => {
       BUSINESS_CONFIG.socials?.facebook,
       BUSINESS_CONFIG.socials?.tripadvisor,
     ].filter(Boolean),
-    openingHours: 'Mo-Su 00:00-24:00',
+    openingHours: 'Mo-Su 09:00-22:00',
     openingHoursSpecification: [
       {
         '@type': 'OpeningHoursSpecification',
@@ -243,8 +243,8 @@ export const generateLocalBusinessSchema = (baseUrl: string) => {
           'Saturday',
           'Sunday',
         ],
-        opens: '00:00',
-        closes: '23:59',
+        opens: '09:00',
+        closes: '22:00',
       },
     ],
     areaServed: [

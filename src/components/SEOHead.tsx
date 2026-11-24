@@ -44,7 +44,13 @@ export const SEOHead: React.FC<SEOHeadProps> = ({ config, structuredData }) => {
     }
     setMetaTag('name', 'author', BUSINESS_CONFIG.brandName);
 
-    // 3. Canonical Link tag
+    // 3. Canonical Link tag — remove any duplicates and enforce exact self-referencing canonical URL
+    const allCanonicals = document.head.querySelectorAll('link[rel="canonical"]');
+    if (allCanonicals.length > 1) {
+      allCanonicals.forEach((el, idx) => {
+        if (idx > 0) el.remove();
+      });
+    }
     let canonicalLink = document.head.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
     if (!canonicalLink) {
       canonicalLink = document.createElement('link');

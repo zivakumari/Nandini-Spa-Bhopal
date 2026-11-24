@@ -48,7 +48,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking, onOpenConfig }) =
               <span title={BUSINESS_CONFIG.streetAddressPlaceholder}>Zone-I, MP Nagar, {BUSINESS_CONFIG.city}</span>
             </span>
             <span className="hidden sm:inline text-[#8C8275]">·</span>
-            <span className="hidden sm:inline text-[#ECE4D8]/90">Open 24 Hours (24/7 Service)</span>
+            <span className="hidden sm:inline text-[#ECE4D8]/90">Open Daily: 9:00 AM – 10:00 PM</span>
           </div>
 
           {/* Right Action Cluster: Contact & Settings */}

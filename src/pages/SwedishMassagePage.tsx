@@ -300,7 +300,7 @@ export const SwedishMassagePage: React.FC<SwedishMassagePageProps> = ({ onOpenBo
                 Visit Nandini Spa in MP Nagar, Bhopal
               </h2>
               <p className="mt-2 text-xs sm:text-sm text-[#685F53] leading-relaxed">
-                Nandini Spa is located in Maharana Pratap Nagar, Bhopal. Open 24 hours daily with valet parking access and 
+                Nandini Spa is located in Maharana Pratap Nagar, Bhopal. Open daily 9:00 AM – 10:00 PM with parking access and 
                 proximity to major hotels and Habibganj (Rani Kamlapati) Station.
               </p>
             </div>

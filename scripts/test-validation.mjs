@@ -85,20 +85,22 @@ if (fs.existsSync(businessConfigPath)) {
   assert(bContent.includes('77.43317379999999'), 'business.ts contains verified longitude 77.43317379999999');
   assert(bContent.includes(NEW_DIRECTIONS_URL), 'business.ts directions URL references new official address');
   assert(bContent.includes(NEW_SEARCH_URL), 'business.ts placeUrl references new Google Maps search URL');
-  assert(bContent.includes('24 Hours') || bContent.includes('24/7'), 'business.ts specifies 24-hour service');
+  assert(bContent.includes('9:00 AM') && bContent.includes('10:00 PM'), 'business.ts specifies verified daily hours (9:00 AM – 10:00 PM)');
+  assert(!bContent.includes('24/7'), 'business.ts contains zero unverified 24/7 claims');
   assert(bContent.includes('anilbhai00555@gmail.com'), 'business.ts contains new official email anilbhai00555@gmail.com');
   assert(!new RegExp(['karan','bhai'].join(''), 'i').test(bContent), 'business.ts contains zero old email references');
   assert(!bContent.includes('github.io'), 'business.ts contains zero github.io references');
   assert(!bContent.includes('Anna Nagar'), 'business.ts contains zero old Anna Nagar references');
 }
 
-// 2c. Validate 24-Hour Service Schema in index.html
+// 2c. Validate Verified Service Hours Schema in index.html
 const indexHtmlPath = path.join(rootDir, 'index.html');
 assert(fs.existsSync(indexHtmlPath), 'index.html exists');
 if (fs.existsSync(indexHtmlPath)) {
   const iContent = fs.readFileSync(indexHtmlPath, 'utf8');
-  assert(iContent.includes('"opens": "00:00"') && iContent.includes('"closes": "23:59"'), 'index.html Schema.org specifies 24-hour service (00:00 to 23:59)');
-  assert(iContent.includes('24 hours') || iContent.includes('24/7'), 'index.html noscript specifies 24-hour service availability');
+  assert(iContent.includes('"opens": "09:00"') && iContent.includes('"closes": "22:00"'), 'index.html Schema.org specifies verified daily hours (09:00 to 22:00)');
+  assert(iContent.includes('9:00 AM – 10:00 PM'), 'index.html noscript specifies verified daily operating hours');
+  assert(!iContent.includes('24/7'), 'index.html contains zero unverified 24/7 claims');
   assert(iContent.includes('anilbhai00555@gmail.com'), 'index.html contains new official email anilbhai00555@gmail.com');
   assert(!new RegExp(['karan','bhai'].join(''), 'i').test(iContent), 'index.html contains zero old email references');
   assert(iContent.includes('22, Ram Gopal Maheshwari Marg'), 'index.html contains new official address in structured data');

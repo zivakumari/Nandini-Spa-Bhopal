@@ -24,7 +24,7 @@ const NAP_DETAILS = {
   phone: '+91 90604 33848',
   phoneTel: '+919060433848',
   email: 'anilbhai00555@gmail.com',
-  hours: 'Open 24 Hours (Monday – Sunday) / 24/7 Round-the-Clock Service',
+  hours: 'Open Daily: 9:00 AM – 10:00 PM (Monday – Sunday)',
   latitude: 23.231228599999998,
   longitude: 77.43317379999999,
   mapsUrl: 'https://www.google.com/maps/dir/?api=1&destination=22%2C+Ram+Gopal+Maheshwari+Marg%2C+Near+City+Bank%2C+Indira+Press+Complex%2C+Zone-I%2C+Maharana+Pratap+Nagar%2C+Bhopal%2C+Madhya+Pradesh+462011%2C+India',
@@ -36,7 +36,7 @@ const routes = [
     path: '/',
     outputPath: path.join(distDir, 'index.html'),
     title: 'Best Spa in Bhopal | Luxury Body Massage Centre in MP Nagar',
-    description: 'Experience the best spa in Bhopal at Nandini Spa, MP Nagar. Therapeutic full body massage, luxury couple spa & 24/7 private suites. Call +91 90604 33848!',
+    description: 'Experience the best spa in Bhopal at Nandini Spa, MP Nagar. Therapeutic full body massage, luxury couple spa & private suites. Call +91 90604 33848!',
     h1: 'Best Spa in Bhopal — Luxury Body Massage & Wellness Sanctuary',
     ogImage: '/nandini-spa-location-updated.png',
     robots: 'index, follow',
@@ -48,7 +48,7 @@ const routes = [
       },
       {
         q: 'What are the operating hours of Nandini Spa Bhopal?',
-        a: 'Nandini Spa is open 24 hours daily (24/7 round-the-clock service) Monday through Sunday to accommodate business travelers, hotel guests, and local residents.',
+        a: 'Nandini Spa is open daily from 9:00 AM to 10:00 PM Monday through Sunday to accommodate business travelers, hotel guests, and local residents.',
       },
       {
         q: 'How can I book an appointment at Nandini Spa Bhopal?',
@@ -105,13 +105,13 @@ const routes = [
         sameAs: [
           NAP_DETAILS.mapsUrl,
         ],
-        openingHours: 'Mo-Su 00:00-24:00',
+        openingHours: 'Mo-Su 09:00-22:00',
         openingHoursSpecification: [
           {
             '@type': 'OpeningHoursSpecification',
             dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-            opens: '00:00',
-            closes: '23:59',
+            opens: '09:00',
+            closes: '22:00',
           },
         ],
         areaServed: [
@@ -223,12 +223,12 @@ const routes = [
   {
     path: '/massage-centre-mp-nagar',
     outputPath: path.join(distDir, 'massage-centre-mp-nagar', 'index.html'),
-    title: 'Massage Centre in MP Nagar Bhopal | Nandini Spa | Open 24/7',
-    description: 'Visit Nandini Spa, the premier massage centre in MP Nagar, Bhopal. Near Habibganj (Rani Kamlapati) Station & DB City Mall. 24/7 private luxury suites. Call now!',
+    title: 'Massage Centre in MP Nagar Bhopal | Nandini Spa Sanctuary',
+    description: 'Visit Nandini Spa, the premier massage centre in MP Nagar, Bhopal. Near Habibganj (Rani Kamlapati) Station & DB City Mall. Private luxury suites. Call now!',
     h1: 'Premier Massage Centre in MP Nagar, Bhopal — Nandini Spa Sanctuary',
     ogImage: '/nandini-spa-location-updated.png',
     robots: 'index, follow',
-    summary: 'Centrally located massage centre in Maharana Pratap Nagar, Bhopal near Rani Kamlapati Station. Featuring certified master bodyworkers, ensuite rainfall showers, and round-the-clock service.',
+    summary: 'Centrally located massage centre in Maharana Pratap Nagar, Bhopal near Rani Kamlapati Station. Featuring certified master bodyworkers, ensuite rainfall showers, and restorative care.',
     breadcrumbs: [
       { name: 'Home', path: '/' },
       { name: 'Massage Centre MP Nagar', path: '/massage-centre-mp-nagar' },
@@ -240,7 +240,7 @@ const routes = [
       },
       {
         q: 'What are the operating hours of Nandini Spa in MP Nagar?',
-        a: 'Nandini Spa operates 24 hours daily (24/7 round-the-clock service) Monday through Sunday.',
+        a: 'Nandini Spa is open daily from 9:00 AM to 10:00 PM Monday through Sunday.',
       },
       {
         q: 'What services are offered at Nandini Spa MP Nagar?',
@@ -270,7 +270,7 @@ const routes = [
           longitude: NAP_DETAILS.longitude,
         },
         hasMap: NAP_DETAILS.embedUrl,
-        openingHours: 'Mo-Su 00:00-24:00',
+        openingHours: 'Mo-Su 09:00-22:00',
       },
       {
         '@context': 'https://schema.org',
@@ -729,7 +729,7 @@ const routes = [
     path: '/contact',
     outputPath: path.join(distDir, 'contact', 'index.html'),
     title: 'Contact Nandini Spa Bhopal | Location, Directions & Phone',
-    description: 'Contact Nandini Spa in MP Nagar, Bhopal. Open 24 hours daily. Call +91 90604 33848, chat on WhatsApp, or get Google Maps directions near Rani Kamlapati Station!',
+    description: 'Contact Nandini Spa in MP Nagar, Bhopal. Open daily 9 AM – 10 PM. Call +91 90604 33848, chat on WhatsApp, or get Google Maps directions near Rani Kamlapati Station!',
     h1: 'Contact Nandini Spa — Official Bhopal Location & Concierge',
     ogImage: '/nandini-spa-location-updated.png',
     robots: 'index, follow',
@@ -918,11 +918,15 @@ for (const route of routes) {
   }
 }
 
-// Ensure sitemap and robots.txt exist in dist
+// Ensure sitemap and robots.txt exist in dist, with auto-updated lastmod
 const publicSitemap = path.join(rootDir, 'public', 'sitemap.xml');
 const distSitemap = path.join(distDir, 'sitemap.xml');
 if (fs.existsSync(publicSitemap)) {
-  fs.copyFileSync(publicSitemap, distSitemap);
+  const today = new Date().toISOString().split('T')[0];
+  let sitemapXml = fs.readFileSync(publicSitemap, 'utf8');
+  sitemapXml = sitemapXml.replace(/<lastmod>.*?<\/lastmod>/g, `<lastmod>${today}</lastmod>`);
+  fs.writeFileSync(distSitemap, sitemapXml, 'utf8');
+  fs.writeFileSync(publicSitemap, sitemapXml, 'utf8');
 }
 
 const publicRobots = path.join(rootDir, 'public', 'robots.txt');

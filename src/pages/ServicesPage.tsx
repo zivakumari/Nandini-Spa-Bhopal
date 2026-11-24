@@ -343,7 +343,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
                   MP Nagar Massage Centre
                 </h4>
                 <p className="text-xs text-[#685F53] mt-1 leading-relaxed">
-                  Centrally located in MP Nagar, near Habibganj (Rani Kamlapati) Station. Open 24/7.
+                  Centrally located in MP Nagar, near Habibganj (Rani Kamlapati) Station. Open daily 9 AM – 10 PM.
                 </p>
               </div>
               <div className="mt-3 flex items-center gap-1 text-xs text-[#446353] font-medium">

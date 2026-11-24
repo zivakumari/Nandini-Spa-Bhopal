@@ -379,22 +379,17 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                         errors.time ? 'border-red-400 bg-red-50/20' : 'border-[#E3DACD]'
                       }`}
                     >
-                      <option value="">Select a preferred time (24 Hours Available)</option>
-                      <option value="08:00 AM">Morning · 08:00 AM</option>
-                      <option value="10:00 AM">Morning · 10:00 AM</option>
-                      <option value="11:30 AM">Morning · 11:30 AM</option>
-                      <option value="01:00 PM">Afternoon · 01:00 PM</option>
-                      <option value="02:30 PM">Afternoon · 02:30 PM</option>
-                      <option value="04:00 PM">Late Afternoon · 04:00 PM</option>
-                      <option value="05:30 PM">Evening · 05:30 PM</option>
-                      <option value="07:00 PM">Evening · 07:00 PM</option>
-                      <option value="08:30 PM">Night · 08:30 PM</option>
-                      <option value="10:00 PM">Night · 10:00 PM</option>
-                      <option value="11:30 PM">Late Night · 11:30 PM</option>
-                      <option value="01:00 AM">Late Night (24h) · 01:00 AM</option>
-                      <option value="03:00 AM">Early Hours (24h) · 03:00 AM</option>
-                      <option value="05:00 AM">Early Hours (24h) · 05:00 AM</option>
-                      <option value="Immediate (24 Hours)">Immediate / Walk-in Now (24 Hours)</option>
+                      <option value="">Select a preferred time (Daily 9 AM – 10 PM)</option>
+                      <option value="09:30 AM">Morning · 09:30 AM</option>
+                      <option value="11:00 AM">Morning · 11:00 AM</option>
+                      <option value="12:30 PM">Afternoon · 12:30 PM</option>
+                      <option value="02:00 PM">Afternoon · 02:00 PM</option>
+                      <option value="03:30 PM">Afternoon · 03:30 PM</option>
+                      <option value="05:00 PM">Late Afternoon · 05:00 PM</option>
+                      <option value="06:30 PM">Evening · 06:30 PM</option>
+                      <option value="08:00 PM">Evening · 08:00 PM</option>
+                      <option value="09:00 PM">Night · 09:00 PM</option>
+                      <option value="Immediate / Walk-in">Immediate / Same-Day (Subject to availability)</option>
                     </select>
                   </div>
                   {errors.time && <p className="text-red-600 text-xs mt-1">{errors.time}</p>}

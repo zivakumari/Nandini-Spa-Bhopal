@@ -338,7 +338,7 @@ export const ThaiMassagePage: React.FC<ThaiMassagePageProps> = ({ onOpenBooking 
               Visit Nandini Spa in Bhopal
             </h3>
             <p className="text-xs text-[#685F53] mt-2">
-              {BUSINESS_CONFIG.streetAddressPlaceholder}. Open 24 hours daily.
+              {BUSINESS_CONFIG.streetAddressPlaceholder}. Open daily 9:00 AM – 10:00 PM.
             </p>
           </div>
 

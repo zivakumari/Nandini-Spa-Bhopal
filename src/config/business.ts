@@ -156,11 +156,11 @@ export const BUSINESS_CONFIG: BusinessConfig = {
     apiKey: typeof import.meta !== "undefined" ? import.meta.env?.VITE_GOOGLE_MAPS_API_KEY : undefined,
   },
 
-  // Operating Hours — 24 Hours / 7 Days a week service
+  // Operating Hours — Verified Daily Schedule
   hours: {
-    weekday: "Open 24 Hours (Monday – Sunday)",
-    weekend: "24/7 Round-the-Clock Service",
-    notes: "Available 24 hours daily. Private suites prepared freshly for every guest. Walk-ins and reservations welcome.",
+    weekday: "Open Daily: 9:00 AM – 10:00 PM (Monday – Sunday)",
+    weekend: "9:00 AM – 10:00 PM",
+    notes: "Open daily from 9:00 AM to 10:00 PM. Private suites prepared freshly for every guest. Walk-ins and reservations welcome.",
   },
 
   socials: {

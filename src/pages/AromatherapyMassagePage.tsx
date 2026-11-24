@@ -197,8 +197,8 @@ export const AromatherapyMassagePage: React.FC<AromatherapyMassagePageProps> = (
           </div>
           <div className="p-3">
             <Clock className="w-6 h-6 text-[#446353] mx-auto mb-1.5" />
-            <div className="text-xs font-semibold text-[#28231D]">Open 24/7 in MP Nagar</div>
-            <div className="text-[11px] text-[#685F53]">Round-the-clock restorative reservations</div>
+            <div className="text-xs font-semibold text-[#28231D]">Open Daily in MP Nagar</div>
+            <div className="text-[11px] text-[#685F53]">9:00 AM – 10:00 PM appointment slots</div>
           </div>
         </div>
       </section>

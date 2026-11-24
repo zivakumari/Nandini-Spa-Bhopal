@@ -26,7 +26,7 @@ export const MassageCentreMpNagarPage: React.FC<MassageCentreMpNagarPageProps> =
     },
     {
       q: 'What are the operating hours of Nandini Spa in MP Nagar?',
-      a: 'Nandini Spa operates 24 hours daily (24/7 round-the-clock service) Monday through Sunday. Whether you need a morning reset before business meetings, an afternoon decompression, or late-night restorative bodywork after transit, our sanctuary is open and staffed.',
+      a: 'Nandini Spa is open daily from 9:00 AM to 10:00 PM Monday through Sunday. Whether you need a morning reset before business meetings or an evening decompression, our sanctuary is prepared for your visit.',
     },
     {
       q: 'What types of massage and spa services are offered at the MP Nagar branch?',
@@ -61,8 +61,8 @@ export const MassageCentreMpNagarPage: React.FC<MassageCentreMpNagarPageProps> =
       desc: 'Situated at 22, Ram Gopal Maheshwari Marg, Near City Bank, Indira Press Complex, Zone-I, walking distance to MP Nagar commercial complexes, DB City Mall, and corporate offices.',
     },
     {
-      title: '24/7 Round-the-Clock Service',
-      desc: 'Open 24 hours Monday through Sunday with private ensuite rainfall showers and freshly sanitized suites.',
+      title: 'Open Daily (9:00 AM – 10:00 PM)',
+      desc: 'Welcoming guests Monday through Sunday with private ensuite rainfall showers and freshly sanitized suites.',
     },
     {
       title: 'Certified Master Therapists',
@@ -102,7 +102,7 @@ export const MassageCentreMpNagarPage: React.FC<MassageCentreMpNagarPageProps> =
 
           <p className="mt-4 sm:mt-5 text-sm sm:text-base lg:text-lg text-[#ECE4D8] font-light max-w-3xl mx-auto leading-relaxed">
             Welcome to <strong>Nandini Spa</strong>, Bhopal’s highest-rated sanctuary for certified bodywork and therapeutic massage in MP Nagar. 
-            Located minutes from Habibganj (Rani Kamlapati) Station, we offer 24/7 private suites, ensuite rainfall showers, 
+            Located minutes from Habibganj (Rani Kamlapati) Station, we offer private luxury suites, ensuite rainfall showers, 
             and authentic anatomical therapies designed for genuine physical renewal.
           </p>
 
@@ -158,8 +158,8 @@ export const MassageCentreMpNagarPage: React.FC<MassageCentreMpNagarPageProps> =
           </div>
           <div className="p-3">
             <Clock className="w-6 h-6 text-[#446353] mx-auto mb-1.5" />
-            <div className="text-xs font-semibold text-[#28231D]">Open 24 Hours Daily</div>
-            <div className="text-[11px] text-[#685F53]">24/7 service Monday through Sunday</div>
+            <div className="text-xs font-semibold text-[#28231D]">Open Daily (9 AM – 10 PM)</div>
+            <div className="text-[11px] text-[#685F53]">Monday through Sunday service</div>
           </div>
           <div className="p-3">
             <ShieldCheck className="w-6 h-6 text-[#446353] mx-auto mb-1.5" />
@@ -188,7 +188,7 @@ export const MassageCentreMpNagarPage: React.FC<MassageCentreMpNagarPageProps> =
               Unlike generic massage parlours, Nandini Spa upholds strict hospital-grade hygiene, verified master practitioners, 
               single-origin botanical oils, and private en-suite rainfall showers in every room. 
               Whether you are a local resident of MP Nagar, Arera Colony, or Shivaji Nagar, or staying at Courtyard by Marriott or Taj Lakefront, 
-              our concierge delivers discreet, professional care 24 hours a day.
+              our concierge delivers discreet, professional care throughout the day.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
@@ -227,7 +227,7 @@ export const MassageCentreMpNagarPage: React.FC<MassageCentreMpNagarPageProps> =
               </div>
               <div>
                 <span className="font-semibold text-[#28231D] block">Operating Hours:</span>
-                <span className="text-[#446353] font-semibold">Open 24 Hours / 7 Days a Week (24/7)</span>
+                <span className="text-[#446353] font-semibold">Open Daily: 9:00 AM – 10:00 PM (Monday – Sunday)</span>
               </div>
               <div>
                 <span className="font-semibold text-[#28231D] block">Reservations & Concierge:</span>
